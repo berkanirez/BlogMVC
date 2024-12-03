@@ -1,0 +1,86 @@
+﻿@model BlogMVC.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1>@Model.Title</h1>
+<hr />
+<p>
+    <span class="glyphicon glyphicon-time"></span>
+    @Model.PostDate
+</p>
+<hr />
+<img class="img-responsive" src="http://placehold.it/900x300" alt="" />
+<hr />
+<blockquote>
+    <p>@Model.Description</p>
+</blockquote>
+<p>
+    @Model.Content
+</p>
+
+<div class="comment">
+    <hr />
+    <div class="well">
+        <h4>Leave a Comment:</h4>
+        <form role="form">
+            <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <hr />
+
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="http://placehold.it/32x32" />
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">Media heading</h4>
+            Excellent!!
+        </div>
+    </div>
+
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="http://placehold.it/32x32" />
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">Media heading</h4>
+            Great blog!!
+        </div>
+    </div>
+
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="http://placehold.it/32x32" />
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">Media heading</h4>
+            Nice!!
+        </div>
+    </div>
+
+</div>
+
+@section RightColumn
+{
+    <div class="card bg-light mb-3">
+        <div class="card-header">Blog Search</div>
+        <div class="card-body">
+            <input type="text" class="form-control" placeholder="Search..." />
+            <button class="btn btn-primary mt-2">Search</button>
+        </div>
+    </div>
+
+    @{ Html.RenderAction("CategoryList", "Category");};
+}
+
